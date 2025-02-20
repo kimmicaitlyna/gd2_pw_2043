@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>220712043 - Kimmi Caitlyn Ariesta</title>
+        <style>
+            h1{
+                text-align: center;
+            }
+
+            button{
+                margin-top: 10px;
+                border-radius: 5px;
+                padding: 10px 20px;
+                border: 1px solid #ccc;
+                font-size: 16px;
+                background-color: #000000;
+                color: #ffffff;
+                border: none;
+                cursor: pointer;
+            }
+
+            .container{
+                width: 400px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                background-color: #d28a8a;
+            }
+
+            .container p{
+                text-decoration: none;
+                font-weight: bold;
+                color: #333;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Modul 2 - HTML Form & JS Basic</h1>
+        <div class="container">
+            <input type="text" id="nilai" value="100" hidden/>
+            <p id="nama"></p>
+            <p id="umur"></p>
+            <p id="gender"></p>
+            <p id="nilaiSaya"></p>
+            <button onclick="onAlert()">Tombol Alert</button>
+        </div>
+        <script>
+            const onAlert = () => alert("Ini Tombol Alert");
+            const reloadPage = () => location.reload();
+
+            const nama = prompt("Masukkan Nama Anda");
+            const umur = prompt("Masukkan Umur Anda");
+            let gender = prompt("Masukkan Jenis Kelamin Anda (L/P)");
+
+            if(gender == "L"){
+                gender = "Laki-laki";
+            }else if(gender == "P"){
+                gender = "Perempuan";
+            }else{
+                gender = "Tidak Diketahui"
+            }
+
+            const konfirmasi = confirm("Apakah Data Anda Sudah Benar?");
+
+            if(konfirmasi){
+                const nilai = document.getElementById("nilai").value;
+                document.getElementById("nama").innerHTML = "Nama Saya " + nama + "";
+                document.getElementById("umur").innerHTML = `Umur Saya ${umur} Tahun`;
+                document.getElementById("gender").innerHTML = `Jenis Kelamin Saya ${gender}`;
+                document.getElementById("nilaiSaya").innerHTML = `Saya Mendapat Nilai ${nilai}`;
+            }else{
+                reloadPage();
+            }
+        </script>
+    </body>
+</html>

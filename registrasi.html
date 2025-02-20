@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>220712043 - Kimmi Caitlyn Ariesta</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <ul class="menu">
+            <li><a href="registrasi.html">Registrasi</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+        <h1>Formulir Registrasi Data Mahasiswa</h1>
+        <form onsubmit="return validateForm()">
+            <table cellspacing="4" cellpadding="4">
+                <tr>
+                    <td><strong>Nama Mahasiswa</strong></td>
+                    <td><input required type="text" id="namamhs" name="namamhs" size="30" /></td>
+                </tr>
+                <tr>
+                    <td><strong>Jenis Kelamin</strong></td>
+                    <td>
+                        <input type="radio" id="laki" name="jk" value="Laki-laki"/>
+                        <label for="laki">Laki-laki</label>
+                        <input type="radio" id="perempuan" name="jk" value="Perempuan"/>
+                        <label for="perempuan">Perempuan</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Program Studi</strong></td>
+                    <td>
+                        <select id="prodi" name="prodi" required>
+                            <option value="">Pilih Prodi</option>
+                            <option value="Teknik Informatika">Informatika</option>
+                            <option value="Teknik Industri">Teknik Industri</option>
+                            <option value="Sistem Informasi">Sistem Informasi</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Nomor Telepon</strong></td>
+                    <td><input required type="number" id="telepon" name="telepon" size="30"/></td>
+                </tr>
+                <tr>
+                    <td><strong>Tanggal Lahir</strong></td>
+                    <td><input required type="date" id="tgl" name="tgl" size="30"/></td>
+                </tr>
+                <tr>
+                    <td><strong>Email</strong></td>
+                    <td><input required type="email" id="email" name="email" size="30"/></td>
+                </tr>
+                <tr>
+                    <td><strong>Password</strong></td>
+                    <td><input required type="password" id="password" name="password" size="30"/></td>
+                </tr>
+                <tr>
+                    <td valign = "top">
+                        <p><strong>Hal Favorit</strong></p>
+                    </td>
+                    <td>
+                        <fieldset>
+                            <legend><strong>Game</strong></legend>
+                            <input type="checkbox" id="pubgMobile" name="game" value="PUBG Mobile"/>
+                            <label for="pubgMobile">Valorant</label>
+                            <input type="checkbox" id="mobileLegeng" name="game" value="Mobile Legend"/>
+                            <label for="mobileLegeng">Mobile Legend</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend><strong>Film</strong></legend>
+                            <input type="checkbox" id="drama" name="film" value="Drama"/>
+                            <label for="drama">Drama</label>
+                            <br />
+                            <input type="checkbox" id="action" name="film" value="Action"/>
+                            <label for="action">Action</label>
+                            <br />
+                            <input type="checkbox" id="romance" name="film" value="Romance"/>
+                            <label for="romance">Romance</label>
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top"><p><strong>Deskripsi</strong></p></td>
+                    <td><textarea required id="deskripsi" name="deskripsi" rows="10" cols="20"></textarea></td>
+                </tr>
+                <tr>
+                    <td><strong>Foto</strong></td>
+                    <td><input required type="file" id="image" name="imagr"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" id="simpan" name="simpan"/></td>
+                </tr>
+            </table>
+        </form>
+        <script>
+            const validateForm = () => alert("Data Berhasil Disimpan !");
+        </script>
+    </body>
+</html>
